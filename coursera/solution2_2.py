@@ -1,9 +1,12 @@
+import functools
 import json
 
 
 def to_json(func):
-    @wraps(func)
-    def decorator(*args, **kwargs):
-        return json.dumps(func(*args, **kwargs))
 
-    return decorator
+    @functools.wraps(func)
+    def wrapped(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return json.dumps(result)
+
+    return wrapped
