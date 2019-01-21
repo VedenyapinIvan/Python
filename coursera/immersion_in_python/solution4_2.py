@@ -8,6 +8,7 @@ class Value:
     def __get__(self, obj, obj_type):
         return self.amount
 
+
 class Account:
     amount = Value()
 
