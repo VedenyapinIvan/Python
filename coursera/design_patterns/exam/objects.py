@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 import pygame
 import random
-import Service
+import service
 
 
 def create_sprite(img, sprite_size):
@@ -84,7 +84,7 @@ class Enemy(Creature, Interactive):
         self.calc_max_HP()
         self.hp = self.max_hp
         self.exp = xp
-        self.action = Service.add_gold
+        self.action = service.add_gold
 
     def interact(self, engine, hero):
         hit = bool(random.getrandbits(1))
